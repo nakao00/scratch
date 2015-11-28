@@ -17,11 +17,11 @@ new (function() {
     ext.get_temp = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&appid=953843ba9d3e02e00134a739ef260a9c',
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=metric&appid=953843ba9d3e02e00134a739ef260a9c',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['Clouds'];
+                  temperature = weather_data['weather'][0]['main'];
                   callback(temperature);
               }
         });
