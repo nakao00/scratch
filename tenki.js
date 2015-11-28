@@ -17,7 +17,7 @@ new (function() {
     ext.get_temp = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial&appid=953843ba9d3e02e00134a739ef260a9c',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the temperature
@@ -30,7 +30,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'current temperature in city %s', 'get_temp', 'Boston, MA'],
+            ['R', 'current temperature in city %s', 'get_temp', 'Osaka-shi, JP'],
         ]
     };
 
